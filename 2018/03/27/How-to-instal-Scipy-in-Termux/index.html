@@ -8,16 +8,16 @@
   <link rel="dns-prefetch" href="http://git.lzf.kim">
   <title>如何在 Termux 安装 Python 的 Scipy / Numpy 库 | 大盾小站</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="网上找了一大圈没找到解决办法，最后在Termux官网找到了解决办法。具体方法如下：  先安装 wget 1pkg install wget  利用 wget 下载 setup-pointless-repo.sh 文件 1wget https://its-pointless.github.io/setup-pointless-repo.sh  执行 setup-pointless-repo.sh 文">
+  <meta name="description" content="网上找了一大圈没找到解决办法，最后在Termux官网找到了解决办法。具体方法如下：1.先安装 wget  1pkg install wget 2.利用 wget 下载 setup-pointless-repo.sh 文件  1wget https://its-pointless.github.io/setup-pointless-repo.sh 3.执行 setup-pointless-repo.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="如何在 Termux 安装 Python 的 Scipy &#x2F; Numpy 库">
 <meta property="og:url" content="http://git.lzf.kim/2018/03/27/How-to-instal-Scipy-in-Termux/index.html">
 <meta property="og:site_name" content="大盾小站">
-<meta property="og:description" content="网上找了一大圈没找到解决办法，最后在Termux官网找到了解决办法。具体方法如下：  先安装 wget 1pkg install wget  利用 wget 下载 setup-pointless-repo.sh 文件 1wget https://its-pointless.github.io/setup-pointless-repo.sh  执行 setup-pointless-repo.sh 文">
-<meta property="og:updated_time" content="2018-03-27T10:27:00.114Z">
+<meta property="og:description" content="网上找了一大圈没找到解决办法，最后在Termux官网找到了解决办法。具体方法如下：1.先安装 wget  1pkg install wget 2.利用 wget 下载 setup-pointless-repo.sh 文件  1wget https://its-pointless.github.io/setup-pointless-repo.sh 3.执行 setup-pointless-repo.">
+<meta property="og:updated_time" content="2018-03-27T10:35:47.741Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何在 Termux 安装 Python 的 Scipy &#x2F; Numpy 库">
-<meta name="twitter:description" content="网上找了一大圈没找到解决办法，最后在Termux官网找到了解决办法。具体方法如下：  先安装 wget 1pkg install wget  利用 wget 下载 setup-pointless-repo.sh 文件 1wget https://its-pointless.github.io/setup-pointless-repo.sh  执行 setup-pointless-repo.sh 文">
+<meta name="twitter:description" content="网上找了一大圈没找到解决办法，最后在Termux官网找到了解决办法。具体方法如下：1.先安装 wget  1pkg install wget 2.利用 wget 下载 setup-pointless-repo.sh 文件  1wget https://its-pointless.github.io/setup-pointless-repo.sh 3.执行 setup-pointless-repo.">
   
     <link rel="alternative" href="/atom.xml" title="大盾小站" type="application/atom+xml">
   
@@ -161,21 +161,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>网上找了一大圈没找到解决办法，最后在<a href="https://wiki.termux.com/wiki/Installing_Scipy_The_Easy_Way" target="_blank" rel="noopener">Termux官网</a>找到了解决办法。<br>具体方法如下：</p>
-<ol>
-<li><p>先安装 wget</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pkg install wget</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>利用 wget 下载 setup-pointless-repo.sh 文件</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://its-pointless.github.io/setup-pointless-repo.sh</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>执行 setup-pointless-repo.sh 文件</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash setup-pointless-repo.sh</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>安装 Scipy / Numpy 库</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pkg install scipy</span><br><span class="line">pkg install numpy</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
+        <p>网上找了一大圈没找到解决办法，最后在<a href="https://wiki.termux.com/wiki/Installing_Scipy_The_Easy_Way" target="_blank" rel="noopener">Termux官网</a>找到了解决办法。<br>具体方法如下：<br>1.先安装 wget<br>  <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pkg install wget</span><br></pre></td></tr></table></figure></p>
+<p>2.利用 wget 下载 setup-pointless-repo.sh 文件<br>  <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://its-pointless.github.io/setup-pointless-repo.sh</span><br></pre></td></tr></table></figure></p>
+<p>3.执行 setup-pointless-repo.sh 文件<br>  <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash setup-pointless-repo.sh</span><br></pre></td></tr></table></figure></p>
+<p>4.安装 Scipy / Numpy 库<br>  <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pkg install scipy</span><br><span class="line">pkg install numpy</span><br></pre></td></tr></table></figure></p>
 <p>附： setup-pointless-repo.sh 文件内容<br>  <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/data/data/com.termux/files/usr/bin/sh</span></span><br><span class="line"><span class="comment"># Get some needed tools. coreutils for mkdir command, gnugp for the signing key, and apt-transport-https to actually connect to the repo</span></span><br><span class="line">apt-get update</span><br><span class="line">apt-get  --assume-yes upgrade </span><br><span class="line">apt-get  --assume-yes install coreutils gnupg2 wget </span><br><span class="line"><span class="comment"># Make the sources.list.d directory</span></span><br><span class="line">mkdir <span class="variable">$PREFIX</span>/etc/apt/sources.list.d</span><br><span class="line"><span class="comment"># Write the needed source file</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"deb [trusted=yes] https://its-pointless.github.io/files/ termux extras"</span> &gt; <span class="variable">$PREFIX</span>/etc/apt/sources.list.d/pointless.list</span><br><span class="line"><span class="comment"># Download signing key from https://its-pointless.github.io/pointless.gpg </span></span><br><span class="line">wget https://its-pointless.github.io/pointless.gpg</span><br><span class="line">apt-key add pointless.gpg</span><br><span class="line"><span class="comment"># Update apt</span></span><br><span class="line">apt update</span><br></pre></td></tr></table></figure></p>
 
       
