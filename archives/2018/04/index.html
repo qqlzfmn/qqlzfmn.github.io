@@ -6,18 +6,14 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://git.lzf.kim">
-  <title>如何在 Termux 安装 Python 的 Scipy / Numpy 库 | 大盾小站</title>
+  <title>Archives: 2018/4 | 大盾小站</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Termux 是一款运行在 Android 系统的 Linux 终端模拟器，无需 root 即可使用。 在使用 Termux 的时候发现无法安装 Python 的 Scipy 库，网上找了一大圈没找到解决办法，最后在Termux官网找到了解决办法。具体方法如下：  安装 wget 1$ pkg install wget  利用 wget 下载 setup-pointless-repo.sh 文件">
-<meta property="og:type" content="article">
-<meta property="og:title" content="如何在 Termux 安装 Python 的 Scipy &#x2F; Numpy 库">
-<meta property="og:url" content="http://git.lzf.kim/2018/03/27/How-to-instal-Scipy-in-Termux/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="大盾小站">
+<meta property="og:url" content="http://git.lzf.kim/archives/2018/04/index.html">
 <meta property="og:site_name" content="大盾小站">
-<meta property="og:description" content="Termux 是一款运行在 Android 系统的 Linux 终端模拟器，无需 root 即可使用。 在使用 Termux 的时候发现无法安装 Python 的 Scipy 库，网上找了一大圈没找到解决办法，最后在Termux官网找到了解决办法。具体方法如下：  安装 wget 1$ pkg install wget  利用 wget 下载 setup-pointless-repo.sh 文件">
-<meta property="og:updated_time" content="2018-03-27T11:40:13.956Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="如何在 Termux 安装 Python 的 Scipy &#x2F; Numpy 库">
-<meta name="twitter:description" content="Termux 是一款运行在 Android 系统的 Linux 终端模拟器，无需 root 即可使用。 在使用 Termux 的时候发现无法安装 Python 的 Scipy 库，网上找了一大圈没找到解决办法，最后在Termux官网找到了解决办法。具体方法如下：  安装 wget 1$ pkg install wget  利用 wget 下载 setup-pointless-repo.sh 文件">
+<meta name="twitter:title" content="大盾小站">
   
     <link rel="alternative" href="/atom.xml" title="大盾小站" type="application/atom+xml">
   
@@ -141,213 +137,49 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-How-to-instal-Scipy-in-Termux" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      如何在 Termux 安装 Python 的 Scipy / Numpy 库
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2018" class="archive-year">2018</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2018/04/05/Python-operator-for-matrix-multiplication/" class="archive-article-date">
+  	<time datetime="2018-04-05T14:42:18.676Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-05</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2018/04/05/Python-operator-for-matrix-multiplication/">Python 矩阵乘法运算符</a>
     </h1>
   
 
-        
-        <a href="/2018/03/27/How-to-instal-Scipy-in-Termux/" class="archive-article-date">
-  	<time datetime="2018-03-27T10:00:22.632Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>Termux</strong> 是一款运行在 Android 系统的 Linux 终端模拟器，无需 root 即可使用。</p>
-<p>在使用 Termux 的时候发现无法安装 Python 的 Scipy 库，网上找了一大圈没找到解决办法，最后在<a href="https://wiki.termux.com/wiki/Installing_Scipy_The_Easy_Way" target="_blank" rel="noopener">Termux官网</a>找到了解决办法。具体方法如下：</p>
-<ol>
-<li><p>安装 wget</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pkg install wget</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>利用 wget 下载 setup-pointless-repo.sh 文件</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ wget https://its-pointless.github.io/setup-pointless-repo.sh</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>执行下载好的 setup-pointless-repo.sh 文件</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ bash setup-pointless-repo.sh</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>安装 Scipy / Numpy 库</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ pkg install scipy</span><br><span class="line">$ pkg install numpy</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>测试安装是否成功</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ python -c <span class="string">'import scipy'</span></span><br><span class="line">$ python -c <span class="string">'import numpy'</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>删除安装过程中下载的文件</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ rm pointless.gpg</span><br><span class="line">$ rm setup-pointless-repo.sh</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>附： setup-pointless-repo.sh 文件内容<br>  <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/data/data/com.termux/files/usr/bin/sh</span></span><br><span class="line"><span class="comment"># Get some needed tools. coreutils for mkdir command, gnugp for the signing key, and apt-transport-https to actually connect to the repo</span></span><br><span class="line">apt-get update</span><br><span class="line">apt-get  --assume-yes upgrade </span><br><span class="line">apt-get  --assume-yes install coreutils gnupg2 wget </span><br><span class="line"><span class="comment"># Make the sources.list.d directory</span></span><br><span class="line">mkdir <span class="variable">$PREFIX</span>/etc/apt/sources.list.d</span><br><span class="line"><span class="comment"># Write the needed source file</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"deb [trusted=yes] https://its-pointless.github.io/files/ termux extras"</span> &gt; <span class="variable">$PREFIX</span>/etc/apt/sources.list.d/pointless.list</span><br><span class="line"><span class="comment"># Download signing key from https://its-pointless.github.io/pointless.gpg </span></span><br><span class="line">wget https://its-pointless.github.io/pointless.gpg</span><br><span class="line">apt-key add pointless.gpg</span><br><span class="line"><span class="comment"># Update apt</span></span><br><span class="line">apt update</span><br></pre></td></tr></table></figure></p>
+        <div class="article-info info-on-right">
+          
+          
 
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/content/admin/zfb_fukuan_QRcode.png">
-                      <span class="reward-type">支付宝</span>
-                    </div>
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/content/admin/wx_fukuan_QRcode.png">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
         </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
-        </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://git.lzf.kim/2018/03/27/How-to-instal-Scipy-in-Termux/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2018/04/05/Python-operator-for-matrix-multiplication/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Python 矩阵乘法运算符
-        
-      </div>
-    </a>
   
   
-    <a href="/2018/03/23/How-to-view-the-password-website-remembered/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">如何查看网站记住的密码</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
-  <div id="gitment-ctn"></div> 
-<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
-<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-var gitment = new Gitment({
-  id: "http://git.lzf.kim/2018/03/27/How-to-instal-Scipy-in-Termux/",
-  owner: 'qqlzfmn',
-  repo: 'qqlzfmn.github.io',
-  oauth: {
-    client_id: '8b9f2d6921ceffd4767c',
-    client_secret: '4fda98e91130097eb390ac2e401bfcaeb87030d1',
-  },
-})
-gitment.render('gitment-ctn')
-</script>
-  
+    
 
 
           </div>
@@ -370,8 +202,8 @@ gitment.render('gitment-ctn')
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

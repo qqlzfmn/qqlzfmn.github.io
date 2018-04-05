@@ -139,6 +139,111 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Python-operator-for-matrix-multiplication" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/04/05/Python-operator-for-matrix-multiplication/">Python 矩阵乘法运算符</a>
+    </h1>
+  
+
+        
+        <a href="/2018/04/05/Python-operator-for-matrix-multiplication/" class="archive-article-date">
+  	<time datetime="2018-04-05T14:42:18.676Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h3><p>在 Python 3.5 中，矩阵乘法函数 <a href="https://docs.scipy.org/doc/numpy-1.13.0/reference/generated/numpy.matmul.html" target="_blank" rel="noopener">numpy.matmul</a> 遵循 <a href="https://www.python.org/dev/peps/pep-0465/" target="_blank" rel="noopener">PEP465</a>，引入了 @ 运算符。</p>
+<h3 id="规范"><a href="#规范" class="headerlink" title="规范"></a>规范</h3><table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>优先级 / 结合性</th>
+<th>方法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>@</td>
+<td>与 * 相同</td>
+<td>__matmul__, __rmatmul__</td>
+</tr>
+<tr>
+<td>@=</td>
+<td>N/A</td>
+<td>__imatmul__</td>
+</tr>
+</tbody>
+</table>
+<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>当我们进行如公式 $ S=(H\beta-r)^T(HVH^T)^{-1}(H\beta-r) $ （各种变量都是矢量或矩阵）的运算时：</p>
+<ul>
+<li><p>使用<code>numpy.dot()</code>函数：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Using dot function:</span></span><br><span class="line">S = np.dot((np.dot(H, beta) - r).T, np.dot(inv(np.dot(np.dot(H, V), H.T)), np.dot(H, beta) - r))</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用<code>numpy.ndarray</code>对象的<code>.dot()</code>方法</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Using dot method:</span></span><br><span class="line">S = (H.dot(beta) - r).T.dot(inv(H.dot(V).dot(H.T))).dot(H.dot(beta) - r)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用<code>@</code>运算符</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Using @ operator:</span></span><br><span class="line">S = (H @ beta - r).T @ inv(H @ V @ H.T) @ (H @ beta - r)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>我们能明显看出使用<code>@</code>运算符写出的等式更加接近数学公式的形式。</p>
+<h3 id="用例"><a href="#用例" class="headerlink" title="用例"></a>用例</h3><ul>
+<li><p>a, b 均为 2*2 的列表时：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = [[<span class="number">1</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">1</span>]]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = [[<span class="number">4</span>, <span class="number">1</span>], [<span class="number">2</span>, <span class="number">2</span>]]</span><br><span class="line"><span class="comment"># Using dot function:</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>np.dot(a, b)</span><br><span class="line">array([[<span class="number">4</span>, <span class="number">1</span>],</span><br><span class="line">       [<span class="number">2</span>, <span class="number">2</span>]])</span><br><span class="line"><span class="comment"># Using dot method:</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a.dot(b)</span><br><span class="line">AttributeError: <span class="string">'list'</span> object has no attribute <span class="string">'dot'</span></span><br><span class="line"><span class="comment"># Using @ operator:</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a @ b</span><br><span class="line">TypeError: unsupported operand type(s) <span class="keyword">for</span> @: <span class="string">'list'</span> <span class="keyword">and</span> <span class="string">'list'</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>a, b 均为二维矩阵时：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">a = np.array([[<span class="number">1</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">1</span>]])</span><br><span class="line">b = np.array([[<span class="number">4</span>, <span class="number">1</span>], [<span class="number">2</span>, <span class="number">2</span>]])</span><br><span class="line"><span class="comment"># Using dot function:</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>np.dot(a, b)</span><br><span class="line">array([[<span class="number">4</span>, <span class="number">1</span>],</span><br><span class="line">       [<span class="number">2</span>, <span class="number">2</span>]])</span><br><span class="line"><span class="comment"># Using dot method:</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a.dot(b)</span><br><span class="line">array([[<span class="number">4</span>, <span class="number">1</span>],</span><br><span class="line">       [<span class="number">2</span>, <span class="number">2</span>]])</span><br><span class="line"><span class="comment"># Using @ operator:</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a @ b</span><br><span class="line">array([[<span class="number">4</span>, <span class="number">1</span>],</span><br><span class="line">       [<span class="number">2</span>, <span class="number">2</span>]])</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/04/05/Python-operator-for-matrix-multiplication/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-How-to-instal-Scipy-in-Termux" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
